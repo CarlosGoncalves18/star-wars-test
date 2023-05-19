@@ -19,12 +19,14 @@ The Star Wars API Explorer supports the following features:
 To run the web application locally, follow these steps:
 
 1. Clone the repository: `git clone https://github.com/CarlosGoncalves18/star-wars-test.git`
-2. In the terminal run `php artisan serve` with composer package manager to run the server with laravel
-3. Open a new terminal 
-4. Navigate to the frontend directory: cd star-wars-front
-5. Install the dependencies: `npm install`
-6. Start the development server: `npm run dev`
-7. Open your web browser and access the application at `http://localhost:5173`
+2. Open a new terminal 
+3. Install composer package manager: `composer install`
+4. In the terminal run `php artisan serve` 
+5. Open a new terminal 
+6. Navigate to the frontend directory: cd star-wars-front
+7. Install the dependencies: `npm install`
+8. Start the development server: `npm run dev`
+9. Open your web browser and access the application at `http://localhost:5173`
    
 ## Pages
 The web application contains:
