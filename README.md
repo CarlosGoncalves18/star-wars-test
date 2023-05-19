@@ -23,7 +23,7 @@ To run the web application locally, follow these steps:
 3. Install composer package manager: `composer install`
 4. In the terminal run `php artisan serve` 
 5. Open a new terminal 
-6. Navigate to the frontend directory: cd star-wars-front
+6. Navigate to the frontend directory: `cd star-wars-front`
 7. Install the dependencies: `npm install`
 8. Start the development server: `npm run dev`
 9. Open your web browser and access the application at `http://localhost:5173`
