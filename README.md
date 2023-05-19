@@ -12,7 +12,7 @@ The Star Wars API Explorer supports the following features:
 
 3. **View Starships:** Users can access a list of starships used in the Star Wars universe. Details about each starship, including its name, model, manufacturer, and other specifications, are available for exploration.
 
-4. **Search for a Person:** The application enables users to search for a specific person within the Star Wars universe. By entering a person's name in the search bar, users can retrieve detailed information about that individual.
+4. **Search for a Person:** The application enables users to search for a specific person within the Star Wars universe. By entering a person's name in the search bar.
 
 ## Getting Started 
 
