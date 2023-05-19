@@ -1,0 +1,376 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+/***
+    The new CSS reset - version 1.8.4 (last updated 14.2.2023)
+    GitHub page: https://github.com/elad2412/the-new-css-reset
+***/
+
+/*
+    Remove all the styles of the "User-Agent-Stylesheet", except for the 'display' property
+    - The "symbol *" part is to solve Firefox SVG sprite bug
+ */
+*:where(
+        :not(html, iframe, canvas, img, svg, video, audio):not(svg *, symbol *)
+    ) {
+    all: unset;
+    display: revert;
+}
+
+/* Preferred box-sizing value */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* Reapply the pointer cursor for anchor tags */
+a,
+button {
+    cursor: revert;
+}
+
+/* Remove list styles (bullets/numbers) */
+ol,
+ul,
+menu {
+    list-style: none;
+}
+
+/* For images to not be able to exceed their container */
+img {
+    max-inline-size: 100%;
+    max-block-size: 100%;
+}
+
+/* removes spacing between cells in tables */
+table {
+    border-collapse: collapse;
+}
+
+/* Safari - solving issue when using user-select:none on the <body> text input doesn't working */
+input,
+textarea {
+    -webkit-user-select: auto;
+}
+
+/* revert the 'white-space' property for textarea elements on Safari */
+textarea {
+    white-space: revert;
+}
+
+/* minimum style to allow to style meter element */
+meter {
+    -webkit-appearance: revert;
+    appearance: revert;
+}
+
+/* preformatted text - use only for this feature */
+:where(pre) {
+    all: revert;
+}
+
+/* reset default text opacity of input placeholder */
+::placeholder {
+    color: unset;
+}
+
+/* remove default dot (•) sign */
+::marker {
+    content: initial;
+}
+
+/* fix the feature of 'hidden' attribute.
+   display:revert; revert to element instead of attribute */
+:where([hidden]) {
+    display: none;
+}
+
+/* revert for bug in Chromium browsers
+   - fix for the content editable attribute will work properly.
+   - webkit-user-select: auto; added for Safari in case of using user-select:none on wrapper element*/
+:where([contenteditable]:not([contenteditable="false"])) {
+    -moz-user-modify: read-write;
+    -webkit-user-modify: read-write;
+    overflow-wrap: break-word;
+    -webkit-line-break: after-white-space;
+    -webkit-user-select: auto;
+}
+
+/* apply back the draggable feature - exist only in Chromium and Safari */
+:where([draggable="true"]) {
+    -webkit-user-drag: element;
+}
+
+/* Revert Modal native behavior */
+:where(dialog:modal) {
+    all: revert;
+}
+
+:root {
+    --clr-nero: #222222;
+    --clr-black: #222831;
+    --clr-grey: #393e46;
+    --clr-lightgrey: #bdbdbd;
+    --clr-yellow: #ffd369;
+    --clr-white: #eeeeee;
+}
+
+/*-------------------------------------------*\ 
+ Base css
+\*-------------------------------------------*/
+body {
+    font-family: "Poppins", sans-serif;
+    background-color: var(--clr-black);
+    color: var(--clr-white);
+}
+
+main {
+    min-height: 100vh;
+    padding: 32px;
+}
+
+h1 {
+    font-size: 24px;
+    font-weight: 700;
+}
+
+b {
+    font-weight: 700;
+}
+
+/*-------------------------------------------*\ 
+ Nav css
+\*-------------------------------------------*/
+
+.navbar {
+    background-color: var(--clr-grey);
+    padding: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.narbar__logo {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--clr-yellow);
+}
+
+.navbar__link-container {
+    display: flex;
+    align-items: center;
+    font-size: 12px;
+}
+
+.navbar__links:not(:last-of-type) {
+    margin-right: 16px;
+}
+
+.top-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/*-------------------------------------------*\ 
+ Card css
+\*-------------------------------------------*/
+
+.cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin-top: 24px;
+}
+
+.card {
+    background-color: var(--clr-grey);
+    padding: 16px;
+    width: 24%;
+    border-radius: 8px;
+}
+
+.card__title {
+    font-weight: 500;
+    font-size: 18px;
+    margin-bottom: 16px;
+    border-bottom: 2px solid var(--clr-yellow);
+    display: inline-block;
+}
+
+.card__text {
+    font-size: 14px;
+    line-height: 24px;
+    margin-bottom: 8px;
+}
+
+/*-------------------------------------------*\ 
+ Input search
+\*-------------------------------------------*/
+
+.input-search {
+    padding: 8px;
+    background: #ffffff;
+    border-radius: 8px;
+    color: var(--clr-nero);
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    border: 2px solid transparent;
+    min-width: 300px;
+}
+
+.input-search::placeholder {
+    color: var(--clr-lightgrey);
+}
+
+.input-search:focus {
+    border: 2px solid var(--clr-yellow);
+}
+
+/*-------------------------------------------*\ 
+ Button css
+\*-------------------------------------------*/
+
+.btn {
+    background: var(--clr-yellow);
+    color: var(--clr-nero);
+    padding: 8px;
+    border-radius: 8px;
+    font-size: 14px;
+    line-height: 17px;
+    margin: 0 8px;
+    border: 2px solid transparent;
+}
+
+/*-------------------------------------------*\ 
+ Pagination
+\*-------------------------------------------*/
+
+.pagination-container {
+    width: max-content;
+    margin: 24px auto 0;
+    display: flex;
+    gap: 8px;
+}
+
+.pagination__btn {
+    width: 32px;
+    height: 32px;
+    border-radius: 4px;
+    border: none;
+    background-color: var(--clr-white);
+    color: var(--clr-grey);
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.pagination__btn:disabled {
+    color: var(--clr-white);
+    font-weight: 700;
+    background-color: var(--clr-yellow);
+    pointer-events: none;
+}
+
+/*-------------------------------------------*\ 
+ Loader
+\*-------------------------------------------*/
+
+.bouncing-loader {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 400px;
+}
+
+.bouncing-loader > div {
+    width: 16px;
+    height: 16px;
+    margin: 3px 6px;
+    border-radius: 50%;
+    background-color: var(--clr-yellow);
+    opacity: 1;
+    animation: bouncing-loader 0.6s infinite alternate;
+}
+
+@keyframes bouncing-loader {
+    to {
+        opacity: 0.1;
+        transform: translateY(-16px);
+    }
+}
+
+.bouncing-loader > div:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.bouncing-loader > div:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+/*-------------------------------------------*\ 
+ Not found css
+\*-------------------------------------------*/
+
+.not-found {
+    margin: 0 auto;
+    width: max-content;
+    text-align: center;
+}
+
+.not-found__error-code {
+    font-weight: 500;
+    font-size: 150px;
+    color: var(--clr-yellow);
+}
+
+.not-found__error-text {
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 36px;
+}
+
+.not-found__error-explanation {
+    font-weight: 500;
+    font-size: 18px;
+}
+
+/*-------------------------------------------*\ 
+ Mobile devices
+\*-------------------------------------------*/
+
+@media (max-width: 768px) {
+    main {
+        padding: 16px;
+    }
+
+    .card {
+        width: 100%;
+    }
+
+    .top-container {
+        display: block;
+    }
+
+    .input-search {
+        width: 100%;
+        min-width: unset;
+    }
+
+    .form {
+        margin-top: 16px;
+        display: flex;
+    }
+
+    .btn {
+        margin-left: 8px;
+        margin-right: 0;
+    }
+
+    .pagination-container {
+        width: 100%;
+    }
+}
