@@ -23,8 +23,8 @@ To run the web application locally, follow these steps:
 3. Open a new terminal 
 4. Navigate to the frontend directory: cd star-wars-front
 5. Install the dependencies: `npm install`
-6. Start the development server: npm run serve
-7. Open your web browser and access the application at `http://localhost:3000`
+6. Start the development server: `npm run dev`
+7. Open your web browser and access the application at `http://localhost:5173`
    
 ## Pages
 The web application contains:
