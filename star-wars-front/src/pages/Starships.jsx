@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import Starship from "../components/Starship";
 import Loader from "../components/Loader";
 import Pagination from "../components/Pagination";

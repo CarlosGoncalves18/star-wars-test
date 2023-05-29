@@ -1,5 +1,3 @@
-import React from "react";
-
 export default function Pagination({ totalPages, currentPage, onClick }) {
     return (
         <div className="pagination-container">

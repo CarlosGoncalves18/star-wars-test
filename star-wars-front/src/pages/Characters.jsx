@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import Character from "../components/Character";
 import Loader from "../components/Loader";
 import Pagination from "../components/Pagination";
@@ -25,7 +25,7 @@ export default function Characters() {
         );
         const data = await response.json();
         setCharacters(data.results);
-        setTotalPages(1);
+        setTotalPages(Math.ceil(data.count / 10));
         setLoading(false);
     };
 
